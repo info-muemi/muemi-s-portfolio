@@ -343,3 +343,19 @@ body {
     border-radius: 30px;
     overflow: hidden;
 }
+@media (max-width: 768px) {
+    .hero-content {
+        display: flex;
+        flex-direction: column; /* Stacks text on top of image */
+        text-align: center;
+        padding: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem; /* Shrinks text slightly so it fits on one screen */
+    }
+
+    .nav-right {
+        display: none; /* Simplifies the top bar for mobile */
+    }
+}

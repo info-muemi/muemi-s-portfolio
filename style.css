@@ -1,0 +1,285 @@
+/* RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background-color: #ffffff;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    position: absolute;
+    width: 100%;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: #1a1a1a;
+    margin-right: 30px;
+    font-weight: 500;
+}
+
+.btn-black {
+    background: #000;
+    color: #fff !important;
+    padding: 12px 28px;
+    border-radius: 50px;
+    transition: transform 0.2s;
+}
+
+.btn-black:hover {
+    transform: scale(1.05);
+}
+
+/* HERO SECTION */
+.hero {
+    background-color: #d1d1e9; /* Soft Purple */
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 5% 60px;
+    border-radius: 0 0 60px 60px;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+    width: 100%;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-text p {
+    font-size: 1.25rem;
+    margin-bottom: 35px;
+    max-width: 480px;
+    color: #333;
+}
+
+.btn-pink {
+    background-color: #f1a7a1; /* Accent Pink */
+    color: #000;
+    padding: 18px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1.5px solid #000;
+    display: inline-block;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 40px; /* Rounded corners from template */
+}
+
+/* PROJECTS SECTION (Minimalist) */
+.section {
+    padding: 100px 5%;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 50px;
+}
+
+.project-simple-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+}
+
+.screenshot-box {
+    width: 100%;
+    height: 300px;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.screenshot-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* GET IN TOUCH SECTION */
+.contact-section {
+    background-color: #d1d1e9;
+    padding: 100px 10%;
+    margin: 40px 5%;
+    border-radius: 60px;
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 20px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    background: #000;
+    color: #fff;
+    padding: 18px 50px;
+    border-radius: 50px;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.main-footer {
+    padding: 80px 10% 40px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+}
+
+/* MOBILE FIXES */
+@media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; text-align: center; }
+    .hero-text h1 { font-size: 3.5rem; }
+    .hero-text p { margin: 0 auto 30px; }
+    .main-footer { flex-direction: column; gap: 30px; text-align: center; }
+}/* Container for the image */
+.screenshot-box {
+    position: relative;
+    border-radius: 24px; /* Makes it look modern and smooth */
+    overflow: hidden;
+    aspect-ratio: 4 / 3; /* Keeps the grid consistent */
+    background: #f0f0f0;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.screenshot-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+/* The dark fade on hover */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover Effects */
+.simple-card:hover .overlay {
+    opacity: 1;
+}
+
+.simple-card:hover img {
+    transform: scale(1.08); /* Modern subtle zoom */
+}
+
+/* The Link Button inside the image */
+.visit-link {
+    background: #fff;
+    color: #000;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.simple-card:hover .visit-link {
+    transform: translateY(0);
+}
+
+/* Text under the image */
+.project-detail {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.project-detail h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-family: 'Playfair Display', serif; /* Use a serif font for that elite look */
+}
+
+.project-detail p {
+    color: #d1d1e9;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}/* This controls the container box */
+.screenshot-box {
+    width: 100%;
+    height: 450px; /* Adjust this height to your liking */
+    border-radius: 25px;
+    overflow: hidden; /* This crops the image to the rounded corners */
+    position: relative;
+    border: 2px solid #000; /* Adds that sharp professional edge */
+    background-color: #f0f0f0; /* Placeholder color while loading */
+}
+
+/* This controls the actual image inside the box */
+.screenshot-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This is the secret! It fills the box without stretching */
+    object-position: top; /* Keeps the most important part of the image visible */
+    display: block;
+}.hero-portrait {
+    box-shadow: 15px 15px 0px #f1a7a1; /* The pink block shadow you liked */
+    transition: all 0.3s ease;
+}
+
+.hero-portrait:hover {
+    transform: translate(-5px, -5px); /* Lift effect */
+    box-shadow: 25px 25px 0px #f1a7a1; /* Shadow grows on hover */
+}
